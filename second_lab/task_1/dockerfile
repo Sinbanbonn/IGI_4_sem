@@ -1,0 +1,7 @@
+FROM python
+workdir /app
+COPY . .
+CMD ["python3" , constants.py]
+CMD ["python3" ,our_functions.py]
+CMD ["python3" , tests.py]
+CMD ["python3" , main.py ]
