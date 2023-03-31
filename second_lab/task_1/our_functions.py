@@ -5,7 +5,7 @@ some_text = "One important issue that is 1  be1coming 1incre1asingly relevan  t1
 def sent_count(text):
     #counter = re.findall(constants.for_sent_count, text)
     new_text = re.sub(constants.abb, lambda m: m.group(0).replace('.', '|'), text)
-    sentences = re.split(constants.for_sent_count, text)
+    sentences = re.split(constants.for_sent_count, new_text)
     return len(sentences)
 
 
