@@ -1,16 +1,39 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+from typing import Set
+import re
+import os
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+class CustomCollection(Set):
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    __is_loaded = False
+    __is_saved = False
+
+    @property
+    def is_loaded(self):
+        return self.__is_loaded
+
+    @is_loaded.setter
+    def is_loaded(self, value):
+        self.__is_loaded = value
+
+    @property
+    def is_saved(self):
+        return self.__is_saved
+
+    @is_saved.setter
+    def is_saved(self, value):
+        self.__is_saved = value
+
+    def __init__(self, data=()):
+        super().__init__(data)
+
+    def find(self, element):
+        return element if element in super().copy() else False
+
+    def list(self):
+        return [element if not element.isdigit() else int(element) for element in super().copy()]
+
+    def grep(self, pattern):
+        return [element for element in super().copy() if re.search(pattern, element)]
+
+
