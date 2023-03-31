@@ -3,8 +3,11 @@ import constants
 
 some_text = "One important issue that is 1  be1coming 1incre1asingly relevan  t1t in today's society is climate change. Climate change is a long-term shift in global or regional climate patterns, and it is primarily caused by human activity such as the burning of fossil fuels and deforestation. The consequences of climate change are far-reaching and can have a significant impact on the planet, including rising sea levels, more frequent and severe weather events, and the extinction of many plant and animal species."
 def sent_count(text):
-    counter = re.findall(constants.for_sent_count, text)
-    return len(counter)
+    #counter = re.findall(constants.for_sent_count, text)
+    new_text = re.sub(constants.abb, lambda m: m.group(0).replace('.', '|'), text)
+    sentences = re.split(constants.for_sent_count, text)
+    return len(sentences)
+
 
 
 def non_dec_sent(text):
