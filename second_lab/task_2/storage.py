@@ -2,9 +2,7 @@ from typing import Set
 import re
 
 
-
 class CustomCollection(Set):
-
     __is_loaded = False
     __is_saved = False
 
@@ -35,5 +33,3 @@ class CustomCollection(Set):
 
     def grep(self, pattern):
         return [element for element in super().copy() if re.search(pattern, element)]
-
-
