@@ -5,7 +5,9 @@ print("sentence count is ", sent_count(some_text))
 print("non-dec sentence count is ", non_dec_sent(some_text))
 print("word count is ", word_search(some_text))
 
-print("Avverage num of words is ", average_len(some_text))
+print("Average num of words is ", average_len(some_text))
 
 print("Top n k is ", top_rep(some_text, 2 , 3 ))
+
+
 
