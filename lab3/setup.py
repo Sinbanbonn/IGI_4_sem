@@ -1,8 +1,8 @@
 from setuptools import setup
 
 setup(
-    name='dubinka-custom-serializer',
-    version='0.0.6',
+    name='logvinov-xmlJSON-serializer',
+    version='0.1.0',
     packages=['custom_serializer',
               'custom_serializer.encoder',
               'custom_serializer.serializers'],
@@ -13,7 +13,7 @@ setup(
     },
     url='',
     license='',
-    author='misha-rab-ymniy',
+    author='Sinbanbon',
     author_email='',
     description=''
 )
